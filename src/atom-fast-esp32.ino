@@ -102,7 +102,7 @@ void drawAtomScreen() {
   tft.setTextColor(0x39C4, TFT_BLACK);
   tft.drawString("               ",6,96,4);
   tft.setTextColor(TFT_WHITE, TFT_BLACK);
-  tft.drawString(String(currentAtomData.impulses, 4)+" imp/s",6,96,4);
+  tft.drawString(String(float(currentAtomData.impulses)/2.0, 1)+" CPS",6,96,4);
 
   tft.setTextColor(0x39C4, TFT_BLACK);
   tft.drawString("    ",180,0,4);
