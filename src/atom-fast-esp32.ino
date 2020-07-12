@@ -234,10 +234,10 @@ void bleSetup() {
 
   BLEScan* pBLEScan = BLEDevice::getScan();
   pBLEScan->setAdvertisedDeviceCallbacks(new MyAdvertisedDeviceCallbacks());
-  pBLEScan->setInterval(1349);
-  pBLEScan->setWindow(449);
+  pBLEScan->setInterval(450);
+  pBLEScan->setWindow(200);
   pBLEScan->setActiveScan(true);
-  pBLEScan->start(30, false);
+  pBLEScan->start(30, false);  
 }
 
 void doBLE() {
