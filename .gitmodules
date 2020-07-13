@@ -1,0 +1,3 @@
+[submodule "lib/Button2"]
+	path = lib/Button2
+	url = https://github.com/LennartHennigs/Button2.git
