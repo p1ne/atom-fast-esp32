@@ -1,0 +1,19 @@
+#ifndef __ATOM_SETTINGS_H_
+#define __ATOM_SETTINGS_H_
+
+#define BSSID "changeme"
+
+#define ZABBIX_HOST "raspberrypi.local"
+#define ZABBIX_IP 192, 168, 1, 2
+#define ZABBIX_PORT 10051
+#define ZABBIX_METRIC_HOST "atom"
+#define ZABBIX_METRIC_NAME "atom.dose_power"
+#define ZABBIX_STATUS_NAME "atom.disconnect"
+
+#define WIFI_AP_SSID     "ESP32AP"
+#define WIFI_AP_PASSWORD "12345678"
+
+#define WIFI_CLIENT_SSID "changeme"
+#define WIFI_CLIENT_PASSWORD "changeme"
+
+#endif // __ATOM_SETTINGS_H_
