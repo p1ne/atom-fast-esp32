@@ -170,6 +170,7 @@ void bleSetup() {
   pNimBLEScan->setInterval(450);
   pNimBLEScan->setWindow(200);
   pNimBLEScan->setActiveScan(true);
+  bleStatus = BLE_SCANNING;
   pNimBLEScan->start(scanTime, scanEndedCallback);
 }
 
@@ -190,6 +191,7 @@ while (true) {
     }
 
     if (bleStatus == BLE_DISCONNECTED) {
+      bleStatus = BLE_SCANNING;
       NimBLEDevice::getScan()->start(scanTime,scanEndedCallback);
     }
     yield();

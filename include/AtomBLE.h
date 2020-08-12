@@ -20,6 +20,7 @@ static uint32_t scanTime = 0;
 
 typedef enum {
   BLE_DISCONNECTED = 0,
+  BLE_SCANNING,
   BLE_CONNECTING,
   BLE_CONNECTED,
   BLE_DISCONNECTING
