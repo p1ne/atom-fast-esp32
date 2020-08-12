@@ -2,25 +2,31 @@
 #define __ATOM_WIFI_H_
 
 #include <WiFi.h>
+#include "esp_wifi.h" // only for fixWifiPersistencyFlag()
 
 #include "AtomBLE.h"
 #include "AtomData.h"
 #include "AtomZabbix.h"
 #include "AtomSettings.h"
 
-#define WIFI_DISCONNECTED 0
-#define WIFI_CONNECTING 1
-#define WIFI_CONNECTED 2
+typedef enum {
+  WIFI_DISCONNECTED = 0,
+  WIFI_CONNECTING,
+  WIFI_CONNECTED,
+  WIFI_DISCONNECTING
+} wifiState_t;
 
-WiFiServer server(80);
-String header;
+static wifiState_t wifiStatus = WIFI_DISCONNECTED;
+static bool firstConnect = true;
+static long stateSince = 0;
+
+#define WIFI_TIMEOUT_ONLINE     2  // reconnect after this [s] offline time
+#define WIFI_TIMEOUT_OFFLINE    20  // disconnect after this [s] online time
+#define WIFI_TIMEOUT_CONNECTING 60  // cancel connecting after this [s] without success
 
 WiFiClient wifiClient = WiFiClient();
 
-uint8_t wifiStatus = WIFI_DISCONNECTED;
-
-void wifiAPSetup();
 void wifiClientSetup();
-void doWiFiServer();
+
 
 #endif // __ATOM_WIFI_H_

@@ -1,3 +1,6 @@
 [submodule "lib/Button2"]
 	path = lib/Button2
 	url = https://github.com/LennartHennigs/Button2.git
+[submodule "lib/NimBLE-Arduino"]
+	path = lib/NimBLE-Arduino
+	url = https://github.com/h2zero/NimBLE-Arduino.git
